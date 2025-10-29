@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dhanunjai — Futuristic Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- External libs (deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+</head>
+<body>
+  <!-- Particle background -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <div id="app">
+    <!-- ========== YOUR ORIGINAL WELCOME (UNCHANGED) ========== -->
+    <section id="welcome" class="page page--welcome">
+      <div class="deck-wrapper">
+        <!-- Left Deck -->
+        <div class="deck left-deck">
+          <img src="thumbnails/Untitled-1.png" alt="Design 1" class="card-img" />
+          <img src="thumbnails/solo.jpg" alt="Design 2" class="card-img" />
+          <img src="thumbnails/edited.jpg" alt="Design 3" class="card-img" />
+        </div>
+
+        <!-- Center Welcome Text -->
+        <div class="welcome-inner">
+          <h1 class="welcome-title">
+            Welcome to<br><span class="name-glow">Dhanunjai Reddy Kristipati</span>
+          </h1>
+          <p class="welcome-sub">Creative Designer • AI Developer • Web Creator</p>
+          <button id="btnExplore" class="btn btn--lg neon-btn">Explore ↓</button>
+        </div>
+
+        <!-- Right Deck -->
+        <div class="deck right-deck">
+          <img src="thumbnails/last surviver.jpeg" alt="Design 4" class="card-img" />
+          <img src="thumbnails/minecraft.jpg" alt="Design 5" class="card-img" />
+          <img src="thumbnails/solo.jpg" alt="Design 6" class="card-img" />
+        </div>
+      </div>
+
+      <div class="welcome-decor">
+        <div class="shape s1"></div>
+        <div class="shape s2"></div>
+      </div>
+    </section>
+
+    <!-- ========== NAV (hidden until Explore) ========== -->
+    <nav class="nav-float hidden" aria-label="Primary">
+      <a href="#welcome" class="nav-logo" data-scroll>DRK</a>
+      <div class="nav-links">
+        <a href="#intro" data-scroll>About</a>
+        <a href="#skills" data-scroll>Skills</a>
+        <a href="#works" data-scroll>Works</a>
+        <a href="#contact" id="contactBtnNav">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ========== INTRO (futuristic) ========== -->
+    <main id="mainContent">
+      <section id="intro" class="page page--intro hidden">
+        <div class="intro-inner">
+          <div class="profile-left">
+            <div class="profile-frame tilt">
+              <img id="profileImg" src="Gemini_Generated_Image_spv497spv497spv4.png" alt="Dhanunjai">
+              <div class="photo-glow"></div>
+            </div>
+          </div>
+
+          <div class="profile-right">
+            <h2 class="hi">Hello — I’m <span class="neon">Dhanunjai</span></h2>
+            <h3 class="tagline"><span id="typed"></span></h3>
+            <p class="bio">I merge design with AI to craft experiences that are visually stunning and technologically advanced. I specialize in brand identity, UI/UX, AI automation, and interactive web solutions.</p>
+
+            <ul class="info-list">
+              <li><strong>Course:</strong> Diploma — Computer Management Engineering (2025–2027)</li>
+              <li><strong>Location:</strong> Kadapa, Andhra Pradesh</li>
+              <li><strong>Email:</strong> <a href="mailto:bunnykristipatidhanu123@gmail.com">bunnykristipatidhanu123@gmail.com</a></li>
+            </ul>
+
+            <div class="social-row">
+              <a class="social" href="https://www.youtube.com/" target="_blank" title="YouTube">YT</a>
+              <a class="social" href="https://github.com/" target="_blank" title="GitHub">GH</a>
+              <a class="social" href="https://wa.me/918247505768" target="_blank" title="WhatsApp">WA</a>
+              <a class="social" href="https://linkedin.com/" target="_blank" title="LinkedIn">IN</a>
+              <a class="social" href="mailto:bunnykristipatidhanu123@gmail.com" title="Email">✉</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SKILLS (futuristic) ========== -->
+      <section id="skills" class="page skills-section hidden">
+        <div class="container">
+          <h2 class="section-title">Skills & Expertise</h2>
+          <p class="section-sub">The perfect fusion of creativity, logic, and innovation.</p>
+
+          <div class="skills-grid">
+            <div class="skill-card skill-radial">
+              <svg class="radial" viewBox="0 0 120 120" data-skill="92"><circle cx="60" cy="60" r="48" class="bg"/><circle cx="60" cy="60" r="48" class="fg"/></svg>
+              <div>
+                <h3>Graphic Design</h3>
+                <p>Figma • Photoshop • Illustrator • Branding</p>
+              </div>
+            </div>
+
+            <div class="skill-card skill-radial">
+              <svg class="radial" viewBox="0 0 120 120" data-skill="86"><circle cx="60" cy="60" r="48" class="bg"/><circle cx="60" cy="60" r="48" class="fg"/></svg>
+              <div>
+                <h3>Web Development</h3>
+                <p>HTML • CSS • JavaScript • React • Node</p>
+              </div>
+            </div>
+
+            <div class="skill-card skill-radial">
+              <svg class="radial" viewBox="0 0 120 120" data-skill="80"><circle cx="60" cy="60" r="48" class="bg"/><circle cx="60" cy="60" r="48" class="fg"/></svg>
+              <div>
+                <h3>AI & ML</h3>
+                <p>Python • TensorFlow • OpenCV • NLP</p>
+              </div>
+            </div>
+
+            <div class="skill-card skill-radial">
+              <svg class="radial" viewBox="0 0 120 120" data-skill="72"><circle cx="60" cy="60" r="48" class="bg"/><circle cx="60" cy="60" r="48" class="fg"/></svg>
+              <div>
+                <h3>IoT & Embedded</h3>
+                <p>Arduino • ESP32 • Sensors • Robotics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== WORKS — upgraded / excellent ========== -->
+      <section id="works" class="page works-section hidden">
+        <div class="container">
+          <header class="works-header">
+            <div>
+              <h2>Selected Works</h2>
+              <p class="muted">Projects across design, AI prototypes, web apps and hardware. Click any card to open the fullscreen case view.</p>
+            </div>
+
+            <div class="works-controls">
+              <div class="cat-row" role="tablist" aria-label="Project Categories">
+                <button class="cat active" data-cat="all" role="tab" aria-selected="true">All</button>
+                <button class="cat" data-cat="design" role="tab">Graphic Design</button>
+                <button class="cat" data-cat="ai" role="tab">AI Projects</button>
+                <button class="cat" data-cat="web" role="tab">Web Apps</button>
+                <button class="cat" data-cat="iot" role="tab">Hardware</button>
+              </div>
+            </div>
+          </header>
+
+          <!-- Grid: 3 columns on desktop, 2 on tablet, 1 on mobile -->
+          <div id="workGrid" class="work-grid grid-pro">
+            <!-- Example items — replace images and data as needed -->
+            <article class="work" data-cat="design" tabindex="0" aria-label="Branding — Spark">
+              <div class="work-thumb">
+                <img src="thumbnails/last surviver.jpeg" alt="Branding Spark">
+                <div class="work-overlay">
+                  <div class="work-tags">Graphic Design</div>
+                  <h3 class="work-title">minecraft Thumbnails</h3>
+                </div>
+              </div>
+              <div class="work-meta">
+                <p class="muted">These are the samples of the graphical design works </p>
+              </div>
+            </article>
+
+            <article class="work" data-cat="ai" tabindex="0" aria-label="Bittu AI">
+              <div class="work-thumb">
+                <img src="thumbnails/editer.jpg" alt="Bittu AI">
+                <div class="work-overlay">
+                  <div class="work-tags">Graphic Design</div>
+                  <h3 class="work-title">Thumbnails</h3>
+                </div>
+              </div>
+              <div class="work-meta"><p class="muted">These are the samples of the graphical design works </p></div>
+            </article>
+
+            <article class="work" data-cat="web" tabindex="0" aria-label="Portfolio v1">
+              <div class="work-thumb">
+                <img src="thumbnails/edited.jpg" alt="Portfolio v1">
+                <div class="work-overlay">
+                  <div class="work-tags">Graphic Design</div>
+                  <h3 class="work-title">Thumbnails</h3>
+                </div>
+              </div>
+              <div class="work-meta"><p class="muted">These are the samples of the graphical design works.</p></div>
+            </article>
+
+            <article class="work" data-cat="iot" tabindex="0" aria-label="EV Charging Prototype">
+              <div class="work-thumb">
+                <img src="thumbnails/Airbrush-image-extender.jpeg" alt="EV Charging">
+                <div class="work-overlay">
+                  <div class="work-tags">Graphic Design</div>
+                  <h3 class="work-title">thumbnails</h3>
+                </div>
+              </div>
+              <div class="work-meta"><p class="muted">These are the samples of the graphical design works </p></div>
+            </article>
+
+            <!-- add more project cards here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONTACT modal (hidden initially) ========== -->
+      <div id="contactModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+        <div class="modal-panel glass">
+          <button class="modal-close" id="closeModal" aria-label="Close contact">✕</button>
+          <h3 id="contactTitle">Contact — Send a Hologram</h3>
+          <p>Prefer short messages — I reply quickly.</p>
+          <form id="contactForm" class="contact-form">
+            <label><span>Name</span><input type="text" name="name" required></label>
+            <label><span>Email</span><input type="email" name="email" required></label>
+            <label><span>Message</span><textarea name="message" rows="4" required></textarea></label>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="button" class="btn btn-ghost" id="modalCancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ========== FOOTER ========== -->
+      <footer class="site-footer hidden">
+        <div class="container">
+          <small>© <span id="year"></span> Dhanunjai Reddy Kristipati — Built with ❤️ & code</small>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Main script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
